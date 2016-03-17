@@ -10,8 +10,8 @@ class CreateCodeTagsTable
         Schema::create('codepress_tags', function(Blueprint $table) {
            $table->increments('id');
            $table->string('name');
-           $table->integer('taggable_id');
-           $table->string('taggable_type');
+           $table->integer('taggable_id')->nullable(true);
+           $table->string('taggable_type')->nullable(true);
            $table->timestamps();
         });
     }
